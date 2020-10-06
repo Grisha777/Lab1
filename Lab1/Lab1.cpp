@@ -1,42 +1,10 @@
 ﻿#include <iostream> 
 #include <fstream>
 #include <array> 
-using namespace std;
-class Polynomial
-{
-    int dimension;
-    double* a;
-public:
-    Polynomial(int dimension)
-    {
-        this->dimension = dimension;
-        a = new double[dimension + 1];
-        for (int i = 0; i < dimension + 1; i++)
-        {
-            a[i] = i;
-        }
+#include "Polynomial.cpp"
 
-    };
-    ~Polynomial()
-    {
-        if (a != nullptr)
-        {
-            delete[] a;
-        }
-    };
-    void print()
-    {
-        for (int i = 0; i <= dimension; i++)
-        {
-            cout << a[i] << ' ';
-        }
-        cout << endl;
-    }
-    double getSum(double x)
-    {
-        return 0;
-    }
-};
+using namespace std;
+
 int main()
 {
     int n;
@@ -64,12 +32,11 @@ int main()
     ofstream foutt("Polynomial.txt"); // открываем файл для записи в текстовом режиме
     foutt << Sum << endl; // Записываем n в текстовом режиме, далее переход на новую строкe
     foutt.close(); // закрываем файл
+    for (int i = 0;i < n;i++) delete aaPolynomial[i];
+    delete[]  aaPolynomial;
     system("pause");
     return 0;
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
 
 // Советы по началу работы 
 //   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
